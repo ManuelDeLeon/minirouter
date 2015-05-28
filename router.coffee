@@ -47,9 +47,13 @@ class Router
     while arr = rx.exec(r.findPath)
       for a in arr
         r.paramNames.push a.substring(1)
-        r.findPath = r.findPath.replace(new RegExp(a), '([A-Za-z0-9]+)' )
+        r.findPath = r.findPath.replace(new RegExp(a), '([^\]+)' )
     routesArr.push r
-  @routes = (rs) -> Router.route r for r in rs
+  @routes = (rs) ->
+    if rs
+      Router.route r for r in rs
+    routesArr
+
   @notFound = ''
 
   getRoute = ->
@@ -84,9 +88,12 @@ class Router
   @template = ->
     currentRoute?.template || Router.notFound
 
-  @data = =>
+  @data = ->
     r = currentRoute
-    if r?.data then r.data() else undefined
+    if r?.data
+      r.data()
+    else
+      r?.params
 
   @defaultLayout = undefined
 

@@ -10,7 +10,7 @@ Package.onUse(function(api) {
     api.use('coffeescript');
     api.use('blaze', 'client');
     api.use('templating', 'client');
-    api.addFiles('router.html', 'client');
+    api.addFiles('routerHooks.html', 'client');
     api.addFiles('routerHooks.coffee', 'client');
     api.addFiles('router.coffee', 'client');
     api.export('Router', 'client');
