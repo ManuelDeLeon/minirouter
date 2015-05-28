@@ -1,7 +1,7 @@
 Package.describe({
   name: 'manuel:minirouter',
   summary: "Because sometimes you just want a router.",
-  version: "1.0.0",
+  version: "1.0.1",
   git: "https://github.com/ManuelDeLeon/minirouter"
 });
 

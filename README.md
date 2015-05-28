@@ -3,7 +3,7 @@ Because sometimes you just want a router.
 
 ## Usage:
 	Router.defaultLayout = 'mainLayout';
-	Router.notFound = 'home';
+	Router.notFound = '4oh4';
 	Router.routes([
 	  {
 		template: 'home',
@@ -12,7 +12,7 @@ Because sometimes you just want a router.
 	  },
 	  {
 		template: 'posts',
-		path: '/posts/{id}'
+		path: '/posts/:id'
 	  }
 	]);
 
